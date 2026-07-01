@@ -1,0 +1,63 @@
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap');
+
+:root {
+  font-family: 'Space Grotesk', sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+
+  color-scheme: dark;
+  color: #eceef0;
+  background-color: #13161a;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  
+  /* Glassmorphism Variables */
+  --glass-bg: #1c2127;
+  --glass-border: rgba(255, 255, 255, 0.07);
+  --glass-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+  
+  /* Core Colors */
+  --primary: #3ddc84;       /* Neon Mint Green */
+  --primary-glow: rgba(61, 220, 132, 0.3);
+  --success: #3ddc84;
+  --success-glow: rgba(61, 220, 132, 0.2);
+  --warning: #ffb020;       /* Hot Yellow-Orange */
+  --danger: #ff5d52;        /* Overdraft Coral Red */
+  --danger-glow: rgba(255, 93, 82, 0.25);
+  
+  /* Slate Grays */
+  --text-muted: #5a6066;
+  --text-secondary: #8b9298;
+  --border-light: rgba(255, 255, 255, 0.06);
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  min-height: 100vh;
+  background: #13161a;
+  overflow-x: hidden;
+}
+
+::selection {
+  background: rgba(61, 220, 132, 0.3);
+}
+
+/* Scrollbar Customization */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #13161a;
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 8px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.18);
+}
