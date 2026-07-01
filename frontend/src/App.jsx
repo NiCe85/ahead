@@ -92,8 +92,14 @@ function App() {
   };
 
   useEffect(() => {
-    fetchLedger('gentle');
-  }, []);
+    fetchLedger(persona);
+    
+    const interval = setInterval(() => {
+      fetchLedger(persona);
+    }, 4000);
+    
+    return () => clearInterval(interval);
+  }, [persona]);
 
   useEffect(() => {
     if (chatEndRef.current) {
