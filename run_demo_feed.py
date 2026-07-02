@@ -34,6 +34,22 @@ def main():
     print("forecasting, refuel predictions, and coaching.")
     print("--------------------------------------------------")
     
+    # Proactively offer to reset the ledger
+    reset_choice = input("Would you like to reset the ledger to its baseline first? (y/n) [default: y]: ").strip().lower()
+    if reset_choice in ["", "y", "yes"]:
+        import os
+        # Path to ledger.json
+        WORKSPACE_DIR = os.path.dirname(os.path.abspath(__file__))
+        LEDGER_PATH = os.path.join(WORKSPACE_DIR, "data", "ledger.json")
+        if os.path.exists(LEDGER_PATH):
+            try:
+                os.remove(LEDGER_PATH)
+                print(" ✅ Ledger successfully reset to baseline! (A new one will generate automatically on next reload)")
+            except Exception as e:
+                print(f" ❌ Failed to delete ledger.json: {e}")
+        else:
+            print(" ✅ Ledger is already at baseline (ledger.json doesn't exist).")
+    
     # 3 demo events
     events = [
         {
